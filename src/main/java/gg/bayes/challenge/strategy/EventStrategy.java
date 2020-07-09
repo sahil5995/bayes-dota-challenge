@@ -1,4 +1,4 @@
-package gg.bayes.challenge.service.strategy;
+package gg.bayes.challenge.strategy;
 
 public interface EventStrategy {
 

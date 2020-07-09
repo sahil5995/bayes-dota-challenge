@@ -13,7 +13,7 @@ import gg.bayes.challenge.rest.model.HeroKills;
 import gg.bayes.challenge.rest.model.HeroSpells;
 import gg.bayes.challenge.service.MatchService;
 import gg.bayes.challenge.dto.HeroMapper;
-import gg.bayes.challenge.service.strategy.DotaStrategyManager;
+import gg.bayes.challenge.strategy.DotaStrategyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

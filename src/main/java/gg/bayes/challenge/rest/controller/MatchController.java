@@ -28,34 +28,34 @@ public class MatchController {
 
     @PostMapping(consumes = "text/plain")
     public ResponseEntity<Long> ingestMatch(@RequestBody @NotNull @NotBlank String payload) {
-        final Long matchId = matchService.ingestMatch(payload);
+        Long matchId = matchService.ingestMatch(payload);
         return ResponseEntity.ok(matchId);
     }
 
     @GetMapping("{matchId}")
     public ResponseEntity<List<HeroKills>> getMatch(@PathVariable("matchId") Long matchId) {
-        List<HeroKills> heroKills = matchService.getKills(matchId);
-        return ResponseEntity.ok(heroKills);
+        List<HeroKills> listHeroKills = matchService.getKills(matchId);
+        return ResponseEntity.ok(listHeroKills);
     }
 
     @GetMapping("{matchId}/{heroName}/items")
     public ResponseEntity<List<HeroItems>> getItems(@PathVariable("matchId") Long matchId,
                                                     @PathVariable("heroName") String heroName) {
-        List<HeroItems> heroItems = matchService.getItems(matchId, heroName);
-        return ResponseEntity.ok(heroItems);
+        List<HeroItems> listHeroItems = matchService.getItems(matchId, heroName);
+        return ResponseEntity.ok(listHeroItems);
     }
 
     @GetMapping("{matchId}/{heroName}/spells")
     public ResponseEntity<List<HeroSpells>> getSpells(@PathVariable("matchId") Long matchId,
                                                       @PathVariable("heroName") String heroName) {
-        List<HeroSpells> heroSpells = matchService.getSpells(matchId, heroName);
-        return ResponseEntity.ok(heroSpells);
+        List<HeroSpells> listHeroSpells = matchService.getSpells(matchId, heroName);
+        return ResponseEntity.ok(listHeroSpells);
     }
 
     @GetMapping("{matchId}/{heroName}/damage")
     public ResponseEntity<List<HeroDamage>> getDamage(@PathVariable("matchId") Long matchId,
                                                       @PathVariable("heroName") String heroName) {
-        List<HeroDamage> heroDamages = matchService.getDamage(matchId, heroName);
-        return ResponseEntity.ok(heroDamages);
+        List<HeroDamage> listHeroDamages = matchService.getDamage(matchId, heroName);
+        return ResponseEntity.ok(listHeroDamages);
     }
 }
